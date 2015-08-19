@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Images</div>
+  <div class="panel-body">
+
+    <button file-upload-trigger class="btn btn-primary">Select the images from the computer</button>
+
+    <file-upload></file-upload>
+
+    <section ng-show="filesLength() > 0">
+      <section ng-show="queueFiles()">
+        <hr>
+        <div class="btn-toolbar" role="toolbar" aria-label="...">
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-danger" remove-queue-files>Remove All Queue Images</button>
+          </div>
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-primary" ng-click="uploadFiles()">Start Upload Images</button>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+
+      <div class="well well-sm">
+        <div class="row">
+          <div id="{{key}}" class="col-sm-6 col-md-4" ng-repeat="(key, value) in files">
+            <div class="thumbnail" cg-busy="{promise:progressInstances[key],message:'Just a moment'}">
+              <img class="img-preview" ng-src="{{value.preview}}" alt="{{value.fileName}}">
+              <div class="caption">
+                <div class="file-name">{{value.fileName}}</div>
+                <div >{{value.fileSize | bytes}}</div>
+                <span class="label label-default" ng-class="{'label-primary':(value.inServer)}">{{value.inServer ? 'In server' : 'In queue' }}</span>
+                <div class="remove-button">
+                  <button remove-file="{{key}}" class="btn btn-danger">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+</div>

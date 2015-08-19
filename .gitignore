@@ -1,0 +1,11 @@
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
+
+
+# IDE and editor specific files #
+#################################
+.idea
+angular-firebase-image-upload.iml
