@@ -2,6 +2,8 @@
 
 The objective of this project is do one thing good, upload images optimized to FireBase.
  
+Demo: https://ng-fire-image-upload.firebaseapp.com/#/ 
+ 
 After deciding the size of the thumbnails, the images are optimized reducing the image size and quality. If the user try to upload one image of 10MB approximately, for one thumbnail of 200x200px the size resulting is: 1.6kB approx.
 
 Relevant files: 
